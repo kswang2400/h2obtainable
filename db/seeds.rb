@@ -8,9 +8,13 @@
 
 require "csv"
 
-csv = CSV.read("#{Rails.root}/app/assets/monthly_data.csv")
+csv_monthly = CSV.read("#{Rails.root}/app/data/assets/monthly_data.csv")
+csv_hourly = CSV.read("#{Rails.root}/app/data/assets/anon_reads.csv")
+# csv_monthly = CSV.read("#{Rails.root}/app/data/assets/monthly_data.csv")
+# csv_monthly = CSV.read("#{Rails.root}/app/data/assets/monthly_data.csv")
+# csv_monthly = CSV.read("#{Rails.root}/app/data/assets/monthly_data.csv")
 
-csv.each do |row|
+csv_monthly.each do |row|
   next if row[0] == "TIMESTAMP"
 
   month = row[0]
@@ -20,6 +24,20 @@ csv.each do |row|
   Usage.create(
     month: month,
     account_id: account_id,
-    consumption: consumption,
+    consumption: consumption
+  )
+end
+
+csv_hourly.each do |row|
+  next if row[0] == "TIMESTAMP"
+
+  hour = row[0]
+  account_id = row[1]
+  reading = row[2]
+
+  HourlyUsage.create(
+    hour: hour,
+    account_id: account_id,
+    consumption: consumption
   )
 end
