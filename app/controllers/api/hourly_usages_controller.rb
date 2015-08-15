@@ -2,7 +2,7 @@
 module Api
   class HourlyUsagesController < ApplicationController
     def index
-      @data = HourlyUsage.all 
+      @data = HourlyUsage.take(100)
 
       render "index.json.jbuilder"
     end
