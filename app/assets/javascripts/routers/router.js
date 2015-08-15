@@ -11,7 +11,13 @@ WaterHack.Routers.Router = Backbone.Router.extend({
   },
 
   usageShow: function(id) {
-    var usage = WaterHack.Collections.Usages.getOrFetch(id);
+    var usage = this.usages.getOrFetch(id);
+
+    var usageShowView = new WaterHack.Views.UsageShow({
+      model: usage
+    });
+
+    this._swapView(usageShowView);
   },
 
   _swapView: function(view) {
