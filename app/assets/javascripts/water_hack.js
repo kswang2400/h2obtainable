@@ -5,8 +5,15 @@ window.WaterHack = {
   Routers: {},
   initialize: function() {
     var $rootEl = $("#main");
+    var usages = new WaterHack.Collections.Usages();
+    var products = new WaterHack.Collections.Products();
 
-    console.log("hi kevin");
+    var router = new WaterHack.Routers.Router({
+      $rootEl: $rootEl,
+      usages: usages,
+      products: products
+    });
+
     Backbone.history.start();
   }
 };
