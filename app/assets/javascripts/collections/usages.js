@@ -3,7 +3,7 @@ WaterHack.Collections.Usages = Backbone.Collection.extend({
 
   model: WaterHack.Models.Usage,
 
-  getOrFetch: function (id) {
+  getOrFetch: function(id) {
     var usage = this.get(id);
 
     if (usage) {
