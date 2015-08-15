@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>WaterHack</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
+  <head>
+    <title>WaterHack</title>
+    <%= csrf_meta_tags %>
+    <%= javascript_include_tag "application" %>
+  </head>
 
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <body>
+    <%= yield %>
+  </body>
 </html>
