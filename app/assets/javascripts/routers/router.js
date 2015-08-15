@@ -7,17 +7,15 @@ WaterHack.Routers.Router = Backbone.Router.extend({
 
   routes: {
     "": "something",
-    "usages/:id": "usageShow"
+    "usages": "usageDashboard"
   },
 
-  usageShow: function(id) {
-    var usage = this.usages.getOrFetch(id);
-
-    var usageShowView = new WaterHack.Views.UsageShow({
-      model: usage
+  usageDashboard: function() {
+    var usageDashboardView = new WaterHack.Views.UsageDashboard({
+      collection: this.usages
     });
 
-    this._swapView(usageShowView);
+    this._swapView(usageDashboardView);
   },
 
   _swapView: function(view) {
