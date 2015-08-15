@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150815185126) do
+ActiveRecord::Schema.define(version: 20150815230948) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "hourly_usages", force: :cascade do |t|
+    t.string   "account_id"
+    t.integer  "consumption"
+    t.string   "hour"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "hourly_usages", ["account_id"], name: "index_hourly_usages_on_account_id", using: :btree
+  add_index "hourly_usages", ["hour"], name: "index_hourly_usages_on_hour", using: :btree
 
   create_table "usages", force: :cascade do |t|
     t.string   "account_id",  null: false
