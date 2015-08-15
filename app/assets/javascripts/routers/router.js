@@ -3,7 +3,6 @@ WaterHack.Routers.Router = Backbone.Router.extend({
     this.$rootEl = options.$rootEl;
     this.usages = options.usages;
     this.products = options.products;
-    this.account_ids = options.account_ids;
   },
 
   routes: {
@@ -13,11 +12,10 @@ WaterHack.Routers.Router = Backbone.Router.extend({
 
   usageDashboard: function() {
     var usageDashboardView = new WaterHack.Views.UsageDashboard({
-      collection: this.usages,
-      accounts: this.account_ids
+      collection: this.usages
     });
 
-    this._swapView(UsageDashboardView);
+    this._swapView(usageDashboardView);
   },
 
   _swapView: function(view) {
