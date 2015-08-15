@@ -1,7 +1,7 @@
 
 class DataController < ApplicationController
   def index
-    
+    data = "DATA"    
 
     render json: data
   end
