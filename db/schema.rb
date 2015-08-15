@@ -11,9 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150815185126) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "data", force: :cascade do |t|
+    t.integer  "account_id",  null: false
+    t.integer  "consumption", null: false
+    t.integer  "month",       null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "data", ["account_id"], name: "index_data_on_account_id", using: :btree
+  add_index "data", ["month"], name: "index_data_on_month", using: :btree
 
 end
