@@ -8,10 +8,20 @@
 
 require "csv"
 
-CSV.foreach("#{Rails.root}/app/assets/monthly_data.csv") do |row|
-  Datum.save(
-    month: row[0],
-    account_id: row[1],
-    consumption: row[2],
+csv = CSV.read("#{Rails.root}/app/assets/monthly_data.csv")
+
+csv.each do |row|
+  next if row[0] == "TIMESTAMP"
+
+  month = row[0]
+  account_id = row[1]
+  consumption = row[2]
+
+  p month, account_id, consumption
+
+  Usage.create(
+    month: month,
+    account_id: account_id,
+    consumption: consumption,
   )
 end
