@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+require "csv"
+
+CSV.foreach("#{Rails.root}/app/assets/monthly_data.csv") do |row|
+  Datum.save(
+    month: row[0],
+    account_id: row[1],
+    consumption: row[2],
+  )
+end
