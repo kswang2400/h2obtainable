@@ -2,9 +2,9 @@
 module Api
   class UsagesController < ApplicationController
     def index
-      data = Usage.all
+      @data = Usage.all
 
-      render json: data
+      render "index.json.jbuilder"
     end
   end
 end
