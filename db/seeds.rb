@@ -17,8 +17,6 @@ csv.each do |row|
   account_id = row[1]
   consumption = row[2]
 
-  p month, account_id, consumption
-
   Usage.create(
     month: month,
     account_id: account_id,

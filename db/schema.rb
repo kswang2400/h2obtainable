@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 20150815185126) do
   enable_extension "plpgsql"
 
   create_table "usages", force: :cascade do |t|
-    t.integer  "consumption", null: false
     t.string   "account_id",  null: false
+    t.integer  "consumption", null: false
     t.string   "month",       null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
