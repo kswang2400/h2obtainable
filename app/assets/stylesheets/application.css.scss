@@ -22,7 +22,9 @@
 }
 
 .container {
+  padding: 0px 0px 0px 0px;
   margin: 0px 0px 0px 0px;
+  width: 100%;
 }
 
 #app-front-page {
@@ -59,4 +61,13 @@
   left: 0;
   background: url("http://thegreenleaf.staradvertiserblogs.com/files/2014/06/International_Surf_Day2014_freecomputerdesktopwallpaper_2560.jpg");
   background-size: 100% 100%;
+}
+
+.usage-chart-container div {
+  font: 10px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 3px;
+  margin: 1px;
+  color: white;
 }
