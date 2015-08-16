@@ -57,7 +57,7 @@ is a team effort even on a micro level. We estimated thresholds for each points 
 family rather than per capita. We also implemented dynamic estimation tools to help families predict water savings if they convert
 to the latest high efficiency water appliance./*?
 
-/*/ [Source](https://google.com)
+* [Source](https://google.com)
 
 ###Is it a solution Utilities or Government can use?
 Can California American Water use the idea with water customers? Can EPA further develop the idea?
@@ -74,6 +74,6 @@ We first tried using hourly data but due to Heroku's database restrictions (10,0
 Although the data provided only gave us consumption per month per user, we wanted to express the data more meaningfully by calculating water savings. We added
 several columns to simulate consumption breakdown/**/ based on appliances to show users where they would save the most water.
 
-/**/ [Source](http://askville.amazon.com/water-average-household-consume/AnswerViewer.do?requestId=230193)
+** [Source](http://askville.amazon.com/water-average-household-consume/AnswerViewer.do?requestId=230193)
 
 [Water Innovation Project](http://www.waterinnovationproject.com/hackathon-2/)
