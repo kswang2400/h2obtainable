@@ -122,29 +122,35 @@ rect {
 }
 
 .product-item {
-  transition: 0.5s ease-out;
+  font-size: 20px;
+  padding: 10px 10px 10px 10px;
+  transition: 0.3s ease-out;
   &:hover {
     cursor: pointer;
-    color: black;
-    transition: 0.5s ease-in;
+    color: rgb(138, 222, 200);
+    transition: 0.3s ease-in;
+  }
+  &:hover img {
+    border: 5px solid rgba(138, 222, 200, 1);
+    transition: 0.3s ease-in;
   }
 }
 
 .product-item.active {
-  color: black;
+  color: rgb(138, 222, 200);
   opacity: 1;
-  transition: 0.5s ease-in;
+  transition: 0.3s ease-in;
 }
 
 .glyphicon {
-  color: black;
+  color: rgb(138, 222, 200);
   opacity: 0;
-  transition: 0.5s ease-out;
+  transition: 0.3s ease-out;
 }
 
-.glyphicon.active-icon {
+.active-icon {
   opacity: 1;
-  transition: 0.5s ease-in;
+  transition: 0.3s ease-in;
 }
 
 hr {
@@ -167,4 +173,34 @@ h3 {
 nav * {
   color: white;
   text-shadow: 0px 0px 1px black;
+}
+
+div.product-item-list {
+  overflow: auto;
+  height: 500px;
+}
+
+.product-list {
+  padding: 0px;
+  margin-top: 5px;
+}
+
+.circular {
+	width: 100px;
+	height: 100px;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+}
+
+img {
+  transition: 0.3s ease-out;
+  margin-right: 25px;
+  border: 5px solid rgba(0,0,0,0);
+}
+
+.active-img, {
+  border: 5px solid rgba(138, 222, 200, 1);
+  border-radius: 150px;
+  transition: 0.3s ease-in;
 }
