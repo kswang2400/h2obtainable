@@ -61,7 +61,7 @@ rect {
 .dashboard-details {
   height: 100%;
   background: white;
-  box-shadow: 12px 0 20px -8px rgba(53, 32, 99, 0.6), -12px 0 20px -8px rgba(53, 32, 99, 0.6);
+  box-shadow: 12px 0 20px -8px rgba(13, 14, 14, 0.6), -12px 0 20px -8px rgba(13, 14, 14, 0.6);
 }
 
 #main {
@@ -75,11 +75,11 @@ rect {
 }
 
 .bar {
-  fill: steelblue;
+  fill: rgba(70, 130, 180, 1);
 }
 
 .axis text {
-  font: 10px sans-serif;
+  font: 14px sans-serif;
 }
 
 .axis path,
@@ -93,11 +93,36 @@ rect {
   display: block;
 }
 
-.product-item:hover {
-  cursor: pointer;
+.product-item {
+  transition: 0.5s ease-out;
+  &:hover {
+    cursor: pointer;
+    color: black;
+    transition: 0.5s ease-in;
+  }
 }
 
 .product-item.active {
   color: black;
+  opacity: 1;
+  transition: 0.5s ease-in;
+}
 
+.glyphicon {
+  color: black;
+  opacity: 0;
+  transition: 0.5s ease-out;
+}
+
+.glyphicon.active-icon {
+  opacity: 1;
+  transition: 0.5s ease-in;
+}
+
+hr {
+  opacity: 0.2;
+}
+
+h3 {
+  text-shadow: 0px 0px 5px black;
 }

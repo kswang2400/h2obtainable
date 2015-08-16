@@ -41,6 +41,7 @@ WaterHack.Views.UsageDashboard = Backbone.CompositeView.extend({
     this.onRender();
 
     $(".active").removeClass("active");
+    $(".active-icon").removeClass("active-icon");
     $("select").on("change", this.selectAccount.bind(this));
 
     return this;
@@ -74,7 +75,7 @@ WaterHack.Views.UsageDashboard = Backbone.CompositeView.extend({
     e.preventDefault();
     var efficiency = $(e.currentTarget).data("efficiency");
     $(e.currentTarget).toggleClass("active");
-
+    $(e.currentTarget).find("span").toggleClass("active-icon");
     var efficiencies = {};
 
     $(".active").each(function(i, el) {
