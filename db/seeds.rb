@@ -8,7 +8,7 @@ csv_monthly.each do |row|
 
   month = row[0]
   account_id = row[1]
-  consumption = row[2]
+  consumption = (row[2].to_i * 7.48052).round(2)
   toilet = row[3]
   shower = row[4]
   laundry = row[5]
