@@ -92,3 +92,8 @@
 .product-item:hover {
   cursor: pointer;
 }
+
+.product-item.active {
+  color: black;
+
+}

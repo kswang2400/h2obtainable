@@ -22,6 +22,15 @@ WaterHack.Views.UsageDashboard = Backbone.CompositeView.extend({
     this.listenTo(this.collection, "sync", this.render);
   },
 
+  onRender: function () {
+    setTimeout(function () {
+      $(".product-list")
+        .on("click", ".product-item", this.useProduct.bind(this));
+
+      Backbone.CompositeView.prototype.onRender.call(this);
+    }.bind(this), 0);
+  },
+
   render: function() {
     var content = this.template({
       usages: this.collection,
@@ -29,8 +38,11 @@ WaterHack.Views.UsageDashboard = Backbone.CompositeView.extend({
     });
     this.$el.html(content);
     this.attachSubviews();
+    this.onRender();
 
+    $(".active").removeClass("active");
     $("select").on("change", this.selectAccount.bind(this));
+
     return this;
   },
 
@@ -56,5 +68,11 @@ WaterHack.Views.UsageDashboard = Backbone.CompositeView.extend({
         account_id: account_id
       }
     });
+  },
+
+  useProduct: function(e) {
+    e.preventDefault();
+    var efficiency = $(e.currentTarget).data("efficiency");
+    $(e.currentTarget).toggleClass("active");
   }
 });
