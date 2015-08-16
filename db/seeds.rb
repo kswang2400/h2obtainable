@@ -2,10 +2,6 @@
 require "csv"
 
 csv_monthly = CSV.read("#{Rails.root}/app/assets/data/monthly_data.csv")
-# csv_hourly = CSV.read("#{Rails.root}/app/assets/data/anon_reads.csv")   # too many rows
-# csv_monthly = CSV.read("#{Rails.root}/app/data/assets/monthly_data.csv")
-# csv_monthly = CSV.read("#{Rails.root}/app/data/assets/monthly_data.csv")
-# csv_monthly = CSV.read("#{Rails.root}/app/data/assets/monthly_data.csv")
 
 csv_monthly.each do |row|
   next if row[0] == "TIMESTAMP"
@@ -19,7 +15,6 @@ csv_monthly.each do |row|
   kitchen = row[6]
   other = row[7]
 
-
   Usage.create(
     month: month,
     account_id: account_id,
@@ -31,3 +26,9 @@ csv_monthly.each do |row|
     other: other
   )
 end
+
+Product.create(name: "toilet", efficiency: 0.5)
+Product.create(name: "shower", efficiency: 0.6)
+Product.create(name: "laundry", efficiency: 0.44)
+Product.create(name: "kitchen", efficiency: 0.17)
+Product.create(name: "other", efficiency: 0.7)
