@@ -17,6 +17,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+#developers-page {
+  background: white;
+}
+
 rect {
   transition: height 3.0s ease;
 }
