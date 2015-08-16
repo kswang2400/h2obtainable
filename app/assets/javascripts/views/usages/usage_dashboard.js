@@ -81,70 +81,76 @@ WaterHack.Views.UsageDashboard = Backbone.CompositeView.extend({
       efficiencies[$(el).data("name")] = $(el).data("efficiency");
     });
 
-    var usageData = this.collection.map(function(usage) {
+    var rects = $("rect");
+    var usageData = this.collection.each(function(usage, i) {
       var totalSavings = 0;
       for (var key in efficiencies) {
         totalSavings += (1 - efficiencies[key]) * usage.get(key) * usage.get("consumption");
       }
 
-      return {
-        month: usage.get("month").split(" ")[0],
-        account_id: usage.get("account_id"),
-        consumption: usage.get("consumption") - totalSavings,
-        toilet: usage.get("toilet"),
-        shower: usage.get("shower"),
-        laundry: usage.get("laundry"),
-        kitchen: usage.get("kitchen"),
-        other: usage.get("other")
-      };
+      var height = parseFloat($($("rect")[i]).attr("height"));
+      var y = parseFloat($($("rect")[i]).attr("y"));
+      $(rects[i]).css("height", height - totalSavings).css("y", y + totalSavings);
+
+      // return {
+      //   month: usage.get("month").split(" ")[0],
+      //   account_id: usage.get("account_id"),
+      //   consumption: usage.get("consumption") - totalSavings,
+      //   toilet: usage.get("toilet"),
+      //   shower: usage.get("shower"),
+      //   laundry: usage.get("laundry"),
+      //   kitchen: usage.get("kitchen"),
+      //   other: usage.get("other")
+      // };
     });
-$(".usage-chart-container").empty();
-    var margin = {top: 20, right: 30, bottom: 30, left: 40},
-        width = $(".usage-chart-container").width() - margin.left - margin.right,
-        height = 500 - margin.top - margin.bottom;
-    var x = d3.scale.ordinal()
-        .rangeRoundBands([0, width], 0.1);
-    var y = d3.scale.linear()
-        .range([height, 0]);
-    var xAxis = d3.svg.axis()
-        .scale(x)
-        .orient("bottom");
-    var yAxis = d3.svg.axis()
-        .scale(y)
-        .orient("left");
-    var chart = d3.select(".usage-chart-container")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-      .append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-    (function(data) {
-      x.domain(data.map(function(d) { return d.month; }));
-      y.domain([0, d3.max(data, function(d) { return d.consumption; })]);
 
-      chart.append("g")
-          .attr("class", "x axis")
-          .attr("transform", "translate(0," + height + ")")
-          .call(xAxis);
-
-      chart.append("g")
-          .attr("class", "y axis")
-          .call(yAxis)
-        .append("text")
-          .attr("transform", "rotate(-90)")
-          .attr("y", 6)
-          .attr("dy", ".71em")
-          .style("text-anchor", "end")
-          .text("Gallons");
-
-      chart.selectAll(".bar")
-          .data(data)
-        .enter().append("rect")
-          .attr("class", "bar")
-          .transition().delay(function(d, i) { return i * 100; }).duration(300)
-          .attr("x", function(d) { return x(d.month); })
-          .attr("y", function(d) { return y(d.consumption); })
-          .attr("height", function(d) { return height - y(d.consumption); })
-          .attr("width", x.rangeBand());
-    })(usageData);
+// $(".usage-chart-container").empty();
+//     var margin = {top: 20, right: 30, bottom: 30, left: 40},
+//         width = $(".usage-chart-container").width() - margin.left - margin.right,
+//         height = 500 - margin.top - margin.bottom;
+//     var x = d3.scale.ordinal()
+//         .rangeRoundBands([0, width], 0.1);
+//     var y = d3.scale.linear()
+//         .range([height, 0]);
+//     var xAxis = d3.svg.axis()
+//         .scale(x)
+//         .orient("bottom");
+//     var yAxis = d3.svg.axis()
+//         .scale(y)
+//         .orient("left");
+//     var chart = d3.select(".usage-chart-container")
+//         .attr("width", width + margin.left + margin.right)
+//         .attr("height", height + margin.top + margin.bottom)
+//       .append("g")
+//         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+//     (function(data) {
+//       x.domain(data.map(function(d) { return d.month; }));
+//       y.domain([0, d3.max(data, function(d) { return d.consumption; })]);
+//
+//       chart.append("g")
+//           .attr("class", "x axis")
+//           .attr("transform", "translate(0," + height + ")")
+//           .call(xAxis);
+//
+//       chart.append("g")
+//           .attr("class", "y axis")
+//           .call(yAxis)
+//         .append("text")
+//           .attr("transform", "rotate(-90)")
+//           .attr("y", 6)
+//           .attr("dy", ".71em")
+//           .style("text-anchor", "end")
+//           .text("Gallons");
+//
+//       chart.selectAll(".bar")
+//           .data(data)
+//         .enter().append("rect")
+//           .attr("class", "bar")
+//           .transition().delay(function(d, i) { return i * 100; }).duration(300)
+//           .attr("x", function(d) { return x(d.month); })
+//           .attr("y", function(d) { return y(d.consumption); })
+//           .attr("height", function(d) { return height - y(d.consumption); })
+//           .attr("width", x.rangeBand());
+//     })(usageData);
   }
 });
