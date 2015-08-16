@@ -19,10 +19,11 @@
 
 * {
   list-style: none;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .container {
+  height: 100%;
   padding: 0px 0px 0px 0px;
   margin: 0px 0px 0px 0px;
   width: 100%;
@@ -48,12 +49,13 @@
 
 .dashboard-sidebar {
   color: white;
-  height: 563px;
+  height: 100%;
   padding-left: 30px;
   background: #5C6F6F;
 }
 
 .dashboard-details {
+  height: 100%;
   background: white;
   box-shadow: 12px 0 20px -8px rgba(53, 32, 99, 0.6), -12px 0 20px -8px rgba(53, 32, 99, 0.6);
 }
@@ -85,4 +87,8 @@
 
 .x.axis path {
   display: block;
+}
+
+.product-item:hover {
+  cursor: pointer;
 }

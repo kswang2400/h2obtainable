@@ -7,6 +7,8 @@ WaterHack.Views.UsageDashboard = Backbone.CompositeView.extend({
   },
 
   initialize: function(options) {
+    this.products = options.products;
+
     $.ajax({
       url: "/api/list_account_ids",
       type: "GET",
@@ -34,6 +36,7 @@ WaterHack.Views.UsageDashboard = Backbone.CompositeView.extend({
 
   renderViews: function() {
     var usageSidebar = new WaterHack.Views.UsageSidebar({
+      collection: this.products,
       account_ids: this.account_ids
     });
 

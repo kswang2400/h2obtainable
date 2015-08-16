@@ -8,19 +8,14 @@ window.WaterHack = {
     var usages = new WaterHack.Collections.Usages();
     var products = new WaterHack.Collections.Products();
 
+    products.fetch();
+
     var router = new WaterHack.Routers.Router({
       $rootEl: $rootEl,
       usages: usages,
       products: products
     });
 
-    // var navbar = new WaterHack.Views.Navbar({
-    //   router: router
-    // });
-    //
-    // $("body").prepend(navbar.$el);
-    // navbar.render();
-    //
     Backbone.history.start();
   }
 };
