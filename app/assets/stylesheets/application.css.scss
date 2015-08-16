@@ -94,17 +94,27 @@ rect {
 }
 
 .product-item {
-  opacity: 0.7;
   transition: 0.5s ease-out;
   &:hover {
     cursor: pointer;
-    opacity: 1;
+    color: black;
     transition: 0.5s ease-in;
   }
 }
 
 .product-item.active {
   color: black;
+  opacity: 1;
+  transition: 0.5s ease-in;
+}
+
+.glyphicon {
+  color: black;
+  opacity: 0;
+  transition: 0.5s ease-out;
+}
+
+.glyphicon.active-icon {
   opacity: 1;
   transition: 0.5s ease-in;
 }

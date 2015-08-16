@@ -3,6 +3,7 @@
     data-name="<%= product.escape("name") %>"
     data-efficiency="<%= product.escape("efficiency") %>"
     class="product-item">
-    <%= product.escape("name") %>
+    <%= product.escape("name").charAt(0).toUpperCase() + product.escape("name").slice(1) %>
+    <span class="glyphicon glyphicon-ok"></span>
   </li>
 <% }) %>
