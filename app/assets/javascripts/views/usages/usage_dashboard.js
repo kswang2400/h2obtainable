@@ -95,7 +95,12 @@ WaterHack.Views.UsageDashboard = Backbone.CompositeView.extend({
 
       var scale = currConsump / height;
       var savingsPx = totalSavings / scale;
-      $(rects[i]).css("height", height - savingsPx).css("y", y + savingsPx);
+      $(rects[i])
+        .css({
+          transition: "0.5s ease-in"
+        })
+        .css("height", height - savingsPx)
+        .css("y", y + savingsPx);
     });
   }
 });
