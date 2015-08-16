@@ -32,10 +32,10 @@ help connect the dots between users, consumption, geolocation, etc.
 ### Does it use the Cal Am Data?
 While the data provided was a great start, our team felt it could be much more 
 useful with consumption breakdown data. Using the EPA estimates for household water
-consumption breakdown/**/, we were able to extrapolate seed data that helped us visualize
+consumption breakdown**, we were able to extrapolate seed data that helped us visualize
 how much water we could be saving if we switched to high efficiency water appliances. 
 Because of this, our platform is also ready when CAM and the EPA start collecting more data.
 
-/**/ [Source](http://www.epa.gov/WaterSense/pubs/indoor.html)
+** [Source](http://www.epa.gov/WaterSense/pubs/indoor.html)
 
 [Water Innovation Project](http://www.waterinnovationproject.com/hackathon-2/)
