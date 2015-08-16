@@ -1,4 +1,4 @@
 
 class Product < ActiveRecord::Base
-  validates :name, :efficiency, presence: true
+  validates :name, :efficiency, :image_url, presence: true
 end
