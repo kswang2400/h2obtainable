@@ -17,6 +17,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+* {
+  list-style: none;
+}
+
+.container {
+  margin: 0px 0px 0px 0px;
+}
+
 #app-front-page {
   position: relative;
   height: 100%;
@@ -35,7 +43,7 @@
   margin: 12px;
 }
 
-#main { 
+#main {
   position: fixed;
   top: 0;
   right: 0;
