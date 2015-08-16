@@ -6,12 +6,14 @@ WaterHack.Views.UsageShow = Backbone.CompositeView.extend({
   className: "usage-show",
 
   initialize: function() {
-    this.listenTo(this.model, "sync", this.render);
+    this.collection.fetch();
+
+    this.listenTo(this.collection, "sync", this.render);
   },
 
   render: function() {
     var content = this.template({
-      usage: this.model
+      usages: this.collection
     });
     this.$el.html(content);
 

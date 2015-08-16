@@ -1,5 +1,17 @@
-USAGESIDEBAR
+<h2>USAGESIDEBAR</h2>
 
-<% account_ids.forEach(function(acct_id) { %>
-  <div><%= acct_id["account_id"] %></div>
-<% }) %>
+<h3>Select Account</h3>
+<select>
+  <option value=""></option>
+  <% account_ids.forEach(function(acct_id) { %>
+    <option class="accounts" value="<%= acct_id["account_id"] %>">
+      <%= acct_id["account_id"] %>
+    </option>
+  <% }) %>
+</select>
+
+<h3>Energy Saving Products</h3>
+<ul class="product-list">
+  <li>Toilet</li>
+  <li>Shower</li>
+</ul>

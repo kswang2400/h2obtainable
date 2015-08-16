@@ -15,3 +15,11 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+* {
+  list-style: none;
+}
+
+.container {
+  margin: 0px 0px 0px 0px;
+}
