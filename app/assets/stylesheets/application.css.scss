@@ -46,11 +46,15 @@
 }
 
 .dashboard-sidebar {
-  background: white;
+  color: white;
+  height: 563px;
+  padding-left: 30px;
+  background: #5C6F6F;
 }
 
 .dashboard-details {
   background: white;
+  box-shadow: 12px 0 20px -8px rgba(53, 32, 99, 0.6), -12px 0 20px -8px rgba(53, 32, 99, 0.6);
 }
 
 #main {
@@ -63,11 +67,21 @@
   background-size: 100% 100%;
 }
 
-.usage-chart-container div {
+.bar {
+  fill: steelblue;
+}
+
+.axis text {
   font: 10px sans-serif;
-  background-color: steelblue;
-  text-align: right;
-  padding: 3px;
-  margin: 1px;
-  color: white;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: block;
 }
