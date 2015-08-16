@@ -30,7 +30,7 @@ WaterHack.Views.UsageShow = Backbone.CompositeView.extend({
     this.$el.html(content);
 
     var margin = {top: 20, right: 30, bottom: 30, left: 40},
-        width = 960 - margin.left - margin.right,
+        width = $(".usage-chart-container").width() - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
 
     var x = d3.scale.ordinal()
@@ -70,7 +70,7 @@ WaterHack.Views.UsageShow = Backbone.CompositeView.extend({
           .attr("y", 6)
           .attr("dy", ".71em")
           .style("text-anchor", "end")
-          .text("Consumption");
+          .text("Gallons");
 
       chart.selectAll(".bar")
           .data(data)
