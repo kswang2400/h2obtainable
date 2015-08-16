@@ -17,8 +17,23 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-#developers-page {
+.dev-page-code-output {
+  font-size: 11px;
+}
+
+#dev-page-description {
+  margin: 20px 10%;
+}
+
+#dev-page-content {
+  margin: 12px;
+}
+
+.developers-page {
   background: white;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
 }
 
 rect {

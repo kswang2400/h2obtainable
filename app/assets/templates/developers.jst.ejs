@@ -1,0 +1,105 @@
+<div class="dev-page-content container">
+  <h1>Water Hack Developers API</h1>
+
+  <div id="dev-page-description">
+    <p>So far we monthly data usage for over 50 users with data as far 
+    back as December 2014. Follow the documentation below to learn how to leverage
+    our API to develop better tools.</p>
+  </div>
+
+
+  <div class="dev-page-set col-md-4">
+    <p>https://water-hack-2015.herokuapp.com/api/list_all_usages</p>
+    <pre><code class="dev-page-code-output">[
+  {
+    "id": 1,
+    "account_id": "54f962a1-bd97-593d-b502-2079c72d922b",
+    "consumption": 1413.82,
+    "month": "12/1/14 0:00",
+    "created_at": "2015-08-16T05:08:08.567Z",
+    "updated_at": "2015-08-16T05:08:08.567Z",
+    "toilet": 0.250613035,
+    "shower": 0.394931603,
+    "laundry": 0.068492864,
+    "kitchen": 0.03980865,
+    "other": 0.246153849
+  },
+  {
+    "id": 2,
+    "account_id": "f21b6cf3-af2e-7790-56d1-a66176c3ddad",
+    "consumption": 3770.18,
+    "month": "12/1/14 0:00",
+    "created_at": "2015-08-16T05:08:08.577Z",
+    "updated_at": "2015-08-16T05:08:08.577Z",
+    "toilet": 0.28515017,
+    "shower": 0.377469773,
+    "laundry": 0.066468918,
+    "kitchen": 0.020698549,
+    "other": 0.250212591
+  },
+  ... 
+    </code></pre>
+  </div>
+  
+  <div class="dev-page-set col-md-4">
+    <p>http://water-hack-2015.herokuapp.com/api/list_account_ids</p>
+    <pre><code class="dev-page-code-output">[
+  {
+    "account_id": "5e8d49f8-2e2b-7117-b230-eb85805cd986"
+  },
+  {
+    "account_id": "8b81d052-45e5-b818-8116-d8add4876c9f"
+  },
+  {
+    "account_id": "9b6a026f-ddeb-81be-5777-39a41823d602"
+  }
+    ...
+    </code></pre>
+    <p>http://water-hack-2015.herokuapp.com/api/products</p>
+    <pre><code class="dev-page-code-output">[
+  {
+    "name": "toilet",
+    "efficiency": 0.5
+  },
+  {
+    "name": "shower",
+    "efficiency": 0.6
+  },
+  {
+    "name": "laundry",
+    "efficiency": 0.44
+  }
+  ...
+    </code></pre>
+  </div>
+
+  <div class="dev-page-set col-md-4">
+    <p>water-hack-2015.herokuapp.com/usages/:account_id</p>
+    <p>e.g. account_id: 54f962a1-bd97-593d-b502-2079c72d922b</p>
+    <pre><code class="dev-page-code-output">[
+  {
+    "id": 1,
+    "account_id": "54f962a1-bd97-593d-b502-2079c72d922b",
+    "consumption": 1413.82,
+    "month": "12/1/14 0:00",
+    "toilet": 0.250613035,
+    "shower": 0.394931603,
+    "laundry": 0.068492864,
+    "kitchen": 0.03980865,
+    "other": 0.246153849
+  },
+  {
+    "id": 24,
+    "account_id": "54f962a1-bd97-593d-b502-2079c72d922b",
+    "consumption": 2685.51,
+    "month": "1/1/15 0:00",
+    "toilet": 0.268522604,
+    "shower": 0.331904944,
+    "laundry": 0.046874085,
+    "kitchen": 0.077486484,
+    "other": 0.275211882
+  },
+  ...
+    </code></pre>
+  </div>
+</div>
