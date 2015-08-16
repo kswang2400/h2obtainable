@@ -17,6 +17,19 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.map-content {
+  height: 100%;
+  background-color: white;
+}
+
+#mapDiv {
+  height: 100%;
+}
+
+#mapDiv_gc {
+  height: 100%;
+}
+
 .dev-page-code-output {
   font-size: 11px;
 }
