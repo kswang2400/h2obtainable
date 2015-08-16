@@ -10,6 +10,11 @@
 
 <h3>Energy Saving Products</h3>
 <ul class="product-list">
-  <li>Toilet</li>
-  <li>Shower</li>
+  <% products.each(function(product) { %>
+    <li
+      data-efficiency="<%= product.escape("efficiency") %>"
+      class="product-item">
+      <%= product.escape("name") %>
+    </li>
+  <% }) %>
 </ul>

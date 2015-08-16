@@ -76,6 +76,7 @@ WaterHack.Views.UsageShow = Backbone.CompositeView.extend({
           .data(data)
         .enter().append("rect")
           .attr("class", "bar")
+          .transition().delay(function(d, i) { return i * 100; }).duration(300)
           .attr("x", function(d) { return x(d.month); })
           .attr("y", function(d) { return y(d.consumption); })
           .attr("height", function(d) { return height - y(d.consumption); })

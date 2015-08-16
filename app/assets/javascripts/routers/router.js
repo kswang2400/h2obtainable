@@ -12,7 +12,8 @@ WaterHack.Routers.Router = Backbone.Router.extend({
 
   usageDashboard: function() {
     var usageDashboardView = new WaterHack.Views.UsageDashboard({
-      collection: this.usages
+      collection: this.usages,
+      products: this.products
     });
 
     this._swapView(usageDashboardView);
