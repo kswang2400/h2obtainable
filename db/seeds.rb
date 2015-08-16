@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
 
 require "csv"
 
@@ -20,10 +13,21 @@ csv_monthly.each do |row|
   month = row[0]
   account_id = row[1]
   consumption = row[2]
+  toilet = row[3]
+  shower = row[4]
+  laundry = row[5]
+  kitchen = row[6]
+  other = row[7]
+
 
   Usage.create(
     month: month,
     account_id: account_id,
-    consumption: consumption
+    consumption: consumption,
+    toilet: toilet,
+    shower: shower,
+    laundry: laundry,
+    kitchen: kitchen,
+    other: other
   )
 end
