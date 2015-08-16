@@ -78,6 +78,10 @@
   font: 10px sans-serif;
 }
 
+rect {
+  transition: 1.0s ease-in;
+}
+
 .axis path,
 .axis line {
   fill: none;
@@ -91,4 +95,9 @@
 
 .product-item:hover {
   cursor: pointer;
+}
+
+.product-item.active {
+  color: black;
+
 }
