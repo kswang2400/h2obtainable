@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150815230948) do
+ActiveRecord::Schema.define(version: 20150816023001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,11 @@ ActiveRecord::Schema.define(version: 20150815230948) do
     t.string   "month",       null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.float    "toilet",      null: false
+    t.float    "shower",      null: false
+    t.float    "laundry",     null: false
+    t.float    "kitchen",     null: false
+    t.float    "other",       null: false
   end
 
   add_index "usages", ["account_id"], name: "index_usages_on_account_id", using: :btree
