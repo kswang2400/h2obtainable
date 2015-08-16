@@ -27,8 +27,8 @@ csv_monthly.each do |row|
   )
 end
 
-Product.create(name: "toilet", efficiency: 0.5)
-Product.create(name: "shower", efficiency: 0.6)
-Product.create(name: "laundry", efficiency: 0.44)
-Product.create(name: "kitchen", efficiency: 0.17)
-Product.create(name: "other", efficiency: 0.7)
+Product.create(name: "toilet", efficiency: 0.5, image_url: "http://www.plumbingproducts.com/images/pp-leaky-toilet.jpg")
+Product.create(name: "shower", efficiency: 0.6, image_url: "http://energy.gov/sites/prod/files/styles/borealis_article_hero_respondlarge/public/shower_7898792.jpg?itok=3UhYrBmh")
+Product.create(name: "laundry", efficiency: 0.44, image_url: "http://www.dictionar.co/wp-content/uploads/2015/05/log-in-sign-up-with-amazing-ideas-and-how-to-wash-laundry.jpg")
+Product.create(name: "kitchen", efficiency: 0.17, image_url: "http://www.epfixit.com/wp-content/uploads/2014/11/RETRODWB_BK_DISHWASHER_OPD_L.jpg?i=13402?i=87558")
+Product.create(name: "other", efficiency: 0.7, image_url: "http://www.go4floors.com/images/faucets/dreamline-faucet-single-hole-dlfhd-509-ch.jpg")

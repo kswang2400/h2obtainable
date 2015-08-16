@@ -16,6 +16,13 @@ window.WaterHack = {
       products: products
     });
 
+    var navbar = new WaterHack.Views.Navbar({
+      router: router
+    });
+
+    $("body").prepend(navbar.$el);
+    navbar.render();
+
     Backbone.history.start();
   }
 };
