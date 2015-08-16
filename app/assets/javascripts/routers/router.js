@@ -11,7 +11,7 @@ WaterHack.Routers.Router = Backbone.Router.extend({
   },
 
   devApi: function () {
-    var view = new WaterHack.Views.DevApi();
+    var view = new WaterHack.Views.Developers();
 
     this._swapView(view);
   },
