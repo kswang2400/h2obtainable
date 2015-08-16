@@ -2,15 +2,9 @@
 module Api
   class HourlyUsagesController < ApplicationController
     def index
-      @data = HourlyUsage.take(100)
+      @data = HourlyUsage.where(account_id: params[:account_id])
 
       render "index.json.jbuilder"
-    end
-
-    def show
-      @data = HourlyUsage.where(account_id: params[:id])
-
-      render "show.json.jbuilder"
     end
 
     def account_ids
