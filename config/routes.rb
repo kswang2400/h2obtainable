@@ -2,6 +2,8 @@
 Rails.application.routes.draw do
   root to: "static_pages#index"
 
+  get "developers", to: "static_pages#developers"
+
   namespace :api, defaults: { format: :json } do
     resources :usages,          only: [:index]
     resources :hourly_usages,   only: [:index]
