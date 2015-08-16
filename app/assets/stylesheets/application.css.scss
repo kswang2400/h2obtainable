@@ -82,7 +82,7 @@ rect {
   color: white;
   height: 100%;
   padding-left: 30px;
-  background: #5C6F6F;
+  background: #709291;
 }
 
 .dashboard-details {
@@ -93,6 +93,7 @@ rect {
 
 #main {
   position: fixed;
+  margin-top: 50px;
   top: 0;
   right: 0;
   bottom: 0;
@@ -151,5 +152,19 @@ hr {
 }
 
 h3 {
-  text-shadow: 0px 0px 5px black;
+  text-shadow: 0px 0px 1px black;
+}
+
+.waterhack-navbar {
+  height: 50px;
+  position: absolute;
+  z-index: 999999999999999;
+  box-shadow: 0px 2px 2px 0px rgba(13, 14, 14, 0.6);
+  width: 100%;
+  background: #5C6F6F;
+}
+
+nav * {
+  color: white;
+  text-shadow: 0px 0px 1px black;
 }
