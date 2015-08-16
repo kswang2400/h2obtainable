@@ -1,6 +1,12 @@
 
 module Api
   class UsagesController < ApplicationController
+    def all
+      data = Usage.all
+
+      render json: data
+    end
+
     def index
       @data = Usage.where(account_id: params[:account_id])
 

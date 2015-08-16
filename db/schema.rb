@@ -33,11 +33,11 @@ ActiveRecord::Schema.define(version: 20150816023001) do
     t.string   "month",       null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "toilet",      null: false
-    t.integer  "shower",      null: false
-    t.integer  "laundry",     null: false
-    t.integer  "kitchen",     null: false
-    t.integer  "other",       null: false
+    t.float    "toilet",      null: false
+    t.float    "shower",      null: false
+    t.float    "laundry",     null: false
+    t.float    "kitchen",     null: false
+    t.float    "other",       null: false
   end
 
   add_index "usages", ["account_id"], name: "index_usages_on_account_id", using: :btree

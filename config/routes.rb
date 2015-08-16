@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     resources :hourly_usages,   only: [:index]
 
     get "list_account_ids", to: "usages#account_ids"
+    get "list_all_usages", to: "usages#all"
   end
 end
