@@ -17,18 +17,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.dev-page-code-output {
+  font-size: 11px;
+}
+
 #dev-page-description {
-  margin: 80px 10%;
+  margin: 20px 10%;
 }
 
 #dev-page-content {
   margin: 12px;
-}
-
-.dev-page-set {
-  border: 1px solid red;
-  text-align: center;
-  height: 400px;
 }
 
 .developers-page {
