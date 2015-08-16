@@ -66,7 +66,7 @@ WaterHack.Views.UsageShow = Backbone.CompositeView.extend({
           .attr("class", "y axis")
           .call(yAxis)
         .append("text")
-          .attr("transform", "translate(0, -20)")
+          .attr("transform", "translate(-5, -25)")
           .attr("y", 6)
           .attr("dy", ".71em")
           .style("text-anchor", "end")
