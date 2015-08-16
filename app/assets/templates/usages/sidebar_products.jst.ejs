@@ -1,0 +1,8 @@
+<% products.each(function(product) { %>
+  <li
+    data-name="<%= product.escape("name") %>"
+    data-efficiency="<%= product.escape("efficiency") %>"
+    class="product-item">
+    <%= product.escape("name") %>
+  </li>
+<% }) %>

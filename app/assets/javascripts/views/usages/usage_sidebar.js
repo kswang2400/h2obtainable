@@ -4,15 +4,12 @@ WaterHack.Views.UsageSidebar = Backbone.CompositeView.extend({
   initialize: function(options) {
     this.account_ids = options.account_ids;
 
-    this.listenTo(this.collection, "sync", this.render);
-  },
+    var sidebarProducts = new WaterHack.Views.SidebarProducts({
+      collection: this.collection
+    });
+    this.addSubview(".product-item-list", sidebarProducts);
 
-  onRender: function () {
-    setTimeout(function () {
-      $(".product-list")
-        .on("click", "li.product-item", this.useProduct.bind(this));
-      Backbone.CompositeView.prototype.onRender.call(this);
-    }.bind(this), 0);
+    this.listenTo(this.collection, "sync", this.render);
   },
 
   render: function() {
@@ -21,14 +18,8 @@ WaterHack.Views.UsageSidebar = Backbone.CompositeView.extend({
       products: this.collection
     });
     this.$el.html(content);
-    this.onRender();
+    this.attachSubviews();
 
     return this;
-  },
-
-  useProduct: function(e) {
-    e.preventDefault();
-    var efficiency = $(e.currentTarget).data("efficiency");
-    
   }
 });
