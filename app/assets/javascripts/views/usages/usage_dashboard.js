@@ -28,7 +28,7 @@ WaterHack.Views.UsageDashboard = Backbone.CompositeView.extend({
     this.$el.html(content);
     this.attachSubviews();
 
-    this.$("select").on("change", this.selectAccount);
+    $("select").on("change", this.selectAccount.bind(this));
     return this;
   },
 
@@ -46,7 +46,12 @@ WaterHack.Views.UsageDashboard = Backbone.CompositeView.extend({
   },
 
   selectAccount: function(e) {
-    var account_id = this.value;
+    var account_id = e.currentTarget.value;
 
+    this.collection.fetch({
+      data: {
+        account_id: account_id
+      }
+    });
   }
 });

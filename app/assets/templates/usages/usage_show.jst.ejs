@@ -1,1 +1,5 @@
 <h2>USAGESHOWVIEW</h2>
+<% usages.each(function(usage) { %>
+  <div><%= usage.escape("account_id") %>: <%= usage.escape("consumption") %></div>
+
+<% }) %>
