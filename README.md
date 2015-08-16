@@ -1,4 +1,4 @@
-# [h2Obtainable](https://water-hack-2015.herokuapp.com)
+# [h2Obtainable](https://h2obtainable.herokuapp.com)
 
 ## Judging Criteria
 
