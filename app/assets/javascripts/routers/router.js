@@ -8,7 +8,14 @@ WaterHack.Routers.Router = Backbone.Router.extend({
   routes: {
     "developers": "devApi",
     "map": "renderMap",
-    "usages": "usageDashboard"
+    "usages": "usageDashboard",
+    "contact": "contactUs"
+  },
+
+  contactUs: function() {
+    var contactPage = new WaterHack.Views.ContactPage();
+
+    this._swapView(contactPage);
   },
 
   devApi: function() {
@@ -17,7 +24,7 @@ WaterHack.Routers.Router = Backbone.Router.extend({
     this._swapView(view);
   },
 
-  renderMap: function () {
+  renderMap: function() {
     var view = new WaterHack.Views.RenderMap();
 
     this._swapView(view);

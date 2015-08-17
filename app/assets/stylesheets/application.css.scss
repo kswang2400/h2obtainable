@@ -221,3 +221,30 @@ img {
   border-radius: 150px;
   transition: 0.3s ease-in;
 }
+
+.contact-page {
+  background-color: white;
+  height: 100%;
+}
+
+#bgvid {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 150%;
+  min-height: 150%;
+  width: auto;
+  height: auto;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.video-overlay {
+  position: absolute;
+  width: 5000px;
+  height: 5000px;
+  overflow: hidden;
+  z-index: 100;
+  background-color: black;
+  opacity: 0.5;
+}
